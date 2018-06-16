@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: helloworld-controller
+spec:
+  replicas: 2
+  selector:
+    app: docket-get-started
+  template:
+    metadata:
+      labels:
+        app: docket-get-started
+    spec:
+      containers:
+      - name: docket-get-started
+        image: amitvashist7/get-started:part2
+        ports:
+        - name: nodejs-port
+          containerPort: 80
