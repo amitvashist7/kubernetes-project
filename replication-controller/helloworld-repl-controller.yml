@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: docket-get-started
-        image: amitvashist7/get-started:part2
+        image: amitvashist7/k8s-tiny-web
         ports:
         - name: nodejs-port
           containerPort: 80

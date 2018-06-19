@@ -24,7 +24,7 @@ apt-get update
 apt-get install -y kubelet kubeadm kubectl
 
 echo "deploying kubernetes (with calico)..."
-kubeadm init --pod-network-cidr=192.168.0.0/16 --apiserver-advertise-address="172.31.0.10" 
+kubeadm init --pod-network-cidr=192.168.0.0/16 --apiserver-advertise-address="172.31.0.100" 
 export KUBECONFIG=/etc/kubernetes/admin.conf
 
 # DigitalOcean without firewall (IP-in-IP allowed) - or any other cloud / on-prem that supports IP-in-IP traffic
