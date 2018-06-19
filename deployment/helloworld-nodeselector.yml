@@ -16,4 +16,4 @@ spec:
         - name: nodejs-port
           containerPort: 80
       nodeSelector:
-        hardware: high
+        hardware: physical
