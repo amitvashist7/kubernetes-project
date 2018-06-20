@@ -1,0 +1,891 @@
+root@helloworld-nginx:/etc/nginx/conf.d# history
+    1  cat /etc/nginx/conf.d/reverseproxy.conf
+    2  vi /etc/nginx/conf.d/reverseproxy.conf
+    3  vim /etc/nginx/conf.d/reverseproxy.conf
+    4  echo "# Hello World" >> /etc/nginx/conf.d/reverseproxy.conf
+    5  exit
+    6  ls
+    7  cd /etc/nginx/conf.d/
+    8  ls
+    9  cat reverseproxy.conf
+   10  cat reverseproxy.conf
+   11  exit
+   12  cd /etc/nginx/conf.d/
+   13  ls
+   14  cat reverseproxy.conf
+   15  cat reverseproxy.conf
+   16  history
+root@helloworld-nginx:/etc/nginx/conf.d# exit
+exit
+root@master:~/kubernetes-project/configmap# history
+    1  git clone https://github.com/amitvashist7/kubernetes-project.git
+    2  ls
+    3  cd kubernetes-project/setup/
+    4  ls
+    5  ip addr
+    6  vi install-kubernetes.sh
+    7  ls
+    8  vi install-kubernetes.sh
+    9  vi Vagrantfile
+   10  ls
+   11  ./install-kubernetes.sh
+   12  cat install-kubernetes.sh
+   13  ./install-kubernetes.sh
+   14  cat install-kubernetes.sh | grep export
+   15  vi ~/.bashrc
+   16  source ~/.bashrc
+   17  kubectl get nodes
+   18  ls
+   19  cd ..
+   20  ls
+   21  cd first-app/
+   22  s
+   23  ls
+   24  kubectl create -f helloworld.yml
+   25  kubectl get pods
+   26  kubectl create -f helloworld-service.yml
+   27  kubectl  get service
+   28  ls
+   29  kubectl get pods
+   30  kubectl  get service
+   31  kubectl get pods
+   32  kubectl get pods -o wide
+   33  kubectl describe pods nodehelloworld.example.com
+   34  kubectl get pods -o wide
+   35  curl 172.31.0.112
+   36  kubectl  get service
+   37  curl 172.31.0.112:30742
+   38  ls
+   39  cd ..
+   40  ls
+   41  kubectl get service
+   42  kubectl delete service helloworld-service
+   43  kubectl get pods
+   44  kubectl delete pods nodehelloworld.example.com
+   45  kubectl get pods
+   46  cd replication-controller/
+   47  ls
+   48  cat helloworld-repl-controller.yml
+   49  cat ../first-app/helloworld.yml
+   50  vi helloworld-repl-controller.yml
+   51  kubectl create -f helloworld-repl-controller.yml
+   52  kubectl  get pods
+   53  kubectl  get pods -o wide
+   54  kubectl delete pod helloworld-controller-kd7sk
+   55  kubectl  get pods -o wide
+   56  kubectl get rc
+   57  kubectl edit rc helloworld-controller
+   58  kubectl get rc
+   59  kubectl  get pods -o wide
+   60  kubectl edit rc helloworld-controller
+   61  kubectl  get pods -o wide
+   62  cd ..
+   63  ls
+   64  git status
+   65  git add .
+   66  git status
+   67  git commit -m "Replication Cantroller Container image has been updated to web tiny"
+   68  git push
+   69  kubectl get rc
+   70  kubectl scale --replicas=1 rc/helloworld-controller
+   71  kubectl get rc
+   72  kubectl  get pods -o wide
+   73  kubectl scale --replicas=4 helloworld-controller
+   74  kubectl scale --replicas=4 rc helloworld-controller
+   75  kubectl  get rc
+   76  kubectl get rc
+   77  kubectl delete rc helloworld-controller
+   78  kubectl get rc
+   79  kubectl  get pods -o wide
+   80  cat deployment/helloworld.yml
+   81  kubectl create -f  deployment/helloworld.yml
+   82  kubectl get deployments
+   83  kubectl get rc
+   84  kubectl get pods
+   85  kubectl get pods --show-labels
+   86  kubectl rollout status deployment/helloworld-deployment
+   87  kubectl get pods
+   88  kubectl get service
+   89  kubectl expose deployment helloworld-deployment --type=NodePort
+   90  kubectl get service
+   91  kubectl descibe service helloworld-deployment
+   92  kubectl describe service helloworld-deployment
+   93  kubectl get pods -o wide
+   94  kubectl get service
+   95  curl 172.31.0.112:31056
+   96  curl 172.31.0.111:31056
+   97  kubectl get service
+   98  kubectl describe service helloworld-deployment
+   99  iptables -L
+  100  iptables -s nat
+  101  iptables -L -s nat
+  102  iptables -L nat
+  103  iptables -L
+  104  kubectl get deployment
+  105  kubectl describe deployment helloworld-deployment
+  106  kubectl set image deployment helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web:2
+  107  kubectl rollout status deployment helloworld-deployment
+  108  kubectl describe deployment helloworld-deployment
+  109  curl 172.31.0.111:31056
+  110  kubectl set image deployment helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web:3
+  111  kubectl rollout status deployment helloworld-deployment
+  112  curl 172.31.0.111:31056
+  113  systemctl status
+  114  systemctl status | grep -i kube
+  115  systemctl status kubelet.service
+  116  curl 172.31.0.111:31056
+  117  kubectl rollout history deployment helloworld-deployment
+  118  curl 172.31.0.111:3105
+  119  curl 172.31.0.111:31056
+  120  kubectl rollout undo deployment helloworld-deployment
+  121  kubectl rollout status deployment helloworld-deployment
+  122  curl 172.31.0.111:31056
+  123  kubectl set image deployment helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web:4
+  124  kubectl rollout status deployment helloworld-deployment
+  125  kubectl rollout history deployment helloworld-deployment
+  126  kubectl rollout history deployment helloworld-deployment --revison=5
+  127  kubectl rollout history deployment helloworld-deployment --revision=5
+  128  kubectl rollout history deployment helloworld-deployment --revision=3
+  129  kubectl rollout history deployment helloworld-deployment --revision=1
+  130  kubectl rollout undo deployment helloworld-deployment --to-revision=1
+  131  kubectl rollout status deployment helloworld-deployment
+  132  curl 172.31.0.111:31056
+  133  kubectl get deployments
+  134  kubectl delete  deployments helloworld-deployment
+  135  kubectl get service
+  136  kubectl delete service helloworld-deployment
+  137  ls
+  138  cat first-app/helloworld.yml
+  139  kubectl create -f first-app/helloworld.yml
+  140  kubectl get pods
+  141  cat first-app/helloworld.yml
+  142  kubectl get pods
+  143  kubectl descibe pod nodehelloworld.example.com
+  144  kubectl describe pod nodehelloworld.example.com
+  145  cat first-app/helloworld-nodeport-service.yml
+  146  kubectl create -f  first-app/helloworld-nodeport-service.yml
+  147  kubectl get service
+  148  curl 172.31.0.112:31001
+  149  kubectl describe service helloworld-service
+  150  kubectl get service
+  151  kubectl describe service helloworld-service
+  152  kubectl get service
+  153  kubectl delete service helloworld-service
+  154  kubectl get service
+  155  kubectl get pods
+  156  kubectl expsoe pod nodehelloworld.example.com
+  157  kubectl expose pod nodehelloworld.example.com
+  158  kubectl expose pod "nodehelloworld.example.com"
+  159  kubectl get pods
+  160  kubectl delete pod nodehelloworld.example.com
+  161  vi first-app/helloworld.yml
+  162  kubectl create -f  first-app/helloworld.yml
+  163  kubectl get pods
+  164  kubectl create -f  first-app/helloworld.yml
+  165  kubectl get pods
+  166  kubectl expose pod podhelloworld
+  167  kubectl get service
+  168  kubectl delete service podhelloworld
+  169  kubectl expose pod podhelloworld --type=NodePort
+  170  kubectl get service
+  171  vi first-app/helloworld.yml
+  172  kubectl create -f  first-app/helloworld.yml
+  173  kubectl get pods
+  174  kubectl create -f  first-app/helloworld-nodeport-service.yml
+  175  kubectl get service
+  176  kubectl describe service helloworld-service
+  177  kubectl describe service podhelloworld
+  178  ls
+  179  kubectl get nodes
+  180  kubectl get nodes --show-labels
+  181  cat kubernetes-project/deployment/helloworld-nodeselector.yml
+  182  cd
+  183  vi kubernetes-project/deployment/helloworld-nodeselector.yml
+  184  kubectl label nodes node01 hardware=high
+  185  kubectl label nodes node02 hardware=low
+  186  kubectl get nodes --show-labels
+  187  kubectl create -f kubernetes-project/deployment/helloworld-nodeselector.yml
+  188  kubectl get deployments
+  189  kubectl get pods
+  190  kubectl get pods -o wide
+  191  cat kubernetes-project/deployment/helloworld-nodeselector.yml
+  192  kubectl get deployments
+  193  kubectl delete deployments helloworld-deploymen
+  194  kubectl get service
+  195  vi kubernetes-project/deployment/helloworld-nodeselector.yml
+  196  kubectl create -f kubernetes-project/deployment/helloworld-nodeselector.yml
+  197  kubectl get deployments
+  198  kubectl get pods -o wide
+  199  kubectl get nodes --show-labels
+  200  kubectl get deployments
+  201  cat kubernetes-project/deployment/helloworld-nodeselector.yml
+  202  kubectl label nodes node02 hardware=physical
+  203  kubectl label nodes node02 hardware=physical --overwrite
+  204  kubectl get nodes --show-labels
+  205  kubectl get deployments
+  206  kubectl get pods
+  207  cat kubernetes-project/deployment/helloworld-healthcheck.yml
+  208  kubectl get deployments
+  209  kubectl delete deployments "helloworld-deployment"
+  210  kubectl get deployments
+  211  kubectl create -f kubernetes-project/deployment/helloworld-healthcheck.yml
+  212  kubectl get deployments
+  213  kubectl get pods --output=wide
+  214  cat kubernetes-project/deployment/helloworld-healthcheck.yml
+  215  kubectl get pods --output=wide
+  216  kubectl describe pods helloworld-deployment-547745bdfd-6jdn7
+  217  kubectl describe pods helloworld-deployment-547745bdfd-5wwqb | grep -i live
+  218  kubectl describe pods helloworld-deployment-547745bdfd-6jdn7 | grep -i live
+  219  kubectl get deployments
+  220  kubectl get deployments helloworld-deployment
+  221  kubectl edit deployments helloworld-deployment
+  222  kubectl get deployments helloworld-deployment
+  223  kubectl get pods
+  224  kubectl log pod helloworld-deployment-69cd88d85-w8fx4
+  225  kubectl logs pod helloworld-deployment-69cd88d85-w8fx4
+  226  kubectl get pods
+  227  kubectl logs pod nodehelloworld
+  228  kubectl log nodehelloworld
+  229  kubectl  logs nodehelloworld
+  230  kubectl get deployments
+  231  kubectl describe  deployments  helloworld-deployment
+  232  kubectl get deployments
+  233  kubectl delete deployments helloworld-deployment
+  234  history
+  235  kubectl get deployments
+  236  kubectl create -f kubernetes-project/deployment/helloworld-healthcheck.yml
+  237  kubectl get pods
+  238  kubectl get service
+  239  curl 172.31.0.100:31001
+  240  curl 172.31.0.100:31064
+  241  kubectl get pods
+  242  kubectl get pods -o wide
+  243  curl 172.31.0.100:31064
+  244  curl 172.31.0.111:31064
+  245  curl 172.31.0.112:31064
+  246  ls
+  247  kubectl get pods
+  248  curl 172.31.0.112:31064
+  249  kubectl get pods
+  250  kubectl get service
+  251  host helloworld-service
+  252  host kubernets
+  253  host 10.107.125.125
+  254  curl 10.107.125.125
+  255  curl 10.107.125.125:31001
+  256  curl 10.96.0.1:443
+  257  curl 10.101.108.151:31064
+  258  curl 10.101.108.151
+  259  kubectl get service
+  260  kubectl describe service podhelloworld
+  261  kubectl describe service helloworld-service
+  262  curl 10.101.108.151:31064
+  263  kubectl get service
+  264  curl 10.101.108.151:80
+  265  kubectl get deployment
+  266  kubectl edit deployment helloworld-deployment
+  267  kubectl get deployment
+  268  kubectl get service
+  269  curl 10.107.125.125
+  270  curl 10.107.125.125:31001
+  271  kubectl get service
+  272  kubectl get pods
+  273  curl 10.107.125.125:31001
+  274  kubectl get pods
+  275  kubectl get service
+  276  curl 10.107.125.125:31001
+  277  kubectl describe deplyment helloworld-deployment
+  278  kubectl describe deployment helloworld-deployment
+  279  curl 10.107.125.125:31001
+  280  kubectl get service
+  281  kubectl get pods
+  282  curl 10.107.125.125:31001
+  283  kubectl get pods
+  284  kubectl get service
+  285  kubectl delete service podhelloworld
+  286  kubectl get pods
+  287  kubectl expose
+  288  man kubectl expose
+  289  kubectl expose -h
+  290  kubectl expose
+  291  kubectl expose -h
+  292  kubectl expose -h | more
+  293  kubectl get service
+  294  kubectl get pods
+  295  kubectl expose pod podhelloworld
+  296  kubectl get pods
+  297  kubectl get service
+  298  curl 10.106.170.254
+  299  kubectl get pods -o wide
+  300  curl 172.31.0.111
+  301  kubectl get service
+  302  curl 172.31.0.125
+  303  curl 172.31.0.125:31001
+  304  curl 10.107.125.125:31001
+  305  curl 172.31.0.111:31001
+  306  curl 172.31.0.112:31001
+  307  curl 172.31.0.125
+  308  ls
+  309  vi multipod-example.yml
+  310  ls
+  311  cd kubernetes-project/
+  312  ls
+  313  cd wordpress/
+  314  ls
+  315  cat wordpress-single-deployment-no-volumes.yml
+  316  ls
+  317  cd
+  318  ls
+  319  vi multicontainerpod-example.yml
+  320  kubectl create -f multicontainerpod-example.yml
+  321  kubectl get pods
+  322  kubectl describe pod redis-django
+  323  ls
+  324  cd kubernetes-project/
+  325  ls
+  326  mkdir multicontainer
+  327  cp -rf /root/multicontainerpod-example.yml multicontainer/
+  328  ls
+  329  kubectl get pods -l
+  330  kubectl get pods
+  331  kubectl get pods redis-django
+  332  kubectl get pods redis-django -o yaml
+  333  kubectl get pods redis-django -o yaml | grep podIP
+  334  kubectl get pods
+  335  cd
+  336  ls
+  337  mkdir mysql-wordpress-persistent-volume
+  338  cd mysql-wordpress-persistent-volume/
+  339  ls
+  340  vi gce-volumes.yaml
+  341  ls
+  342  vi local-volumes.yaml
+  343  df -h
+  344  vi mysql-deployment.yaml
+  345  vi wordpress-deployment.yaml
+  346  vi gce-volumes.yaml
+  347  vi wordpress-deployment.yaml
+  348  vi mysql-deployment.yaml
+  349  kubectl create secret generic mysql-pass --from-literal=password=YOUR_PASSWORD
+  350  kubectl get pvc
+  351  ls
+  352  kubectl create -f gce-volumes.yaml
+  353  kubectl get pvc
+  354  kubectl get pv
+  355  kubectl create -f local-volumes.yaml
+  356  kubectl get pv
+  357  kubectl get pvc
+  358  kubectl create -f mysql-deployment.yaml
+  359  kubectl get pvc
+  360  kubectl get pods
+  361  kubectl create -f wordpress-deployment.yaml
+  362  kubectl get pvc
+  363  kubectl get pods
+  364  kubectl get pvc
+  365  kubectl get pods
+  366  kubectl exec wordpress-mysql-bcc89f687-9d425 -i -t -- mysql -u root -p
+  367  kubectl get pods
+  368  sl
+  369  ls
+  370  cd ..
+  371  ls
+  372  mkdir nfs-volumes
+  373  ls
+  374  kubectl get pods
+  375  kubectl describe pod wordpress-7bdfd5557c-s247f
+  376  ls
+  377  cd nfs-volumes/
+  378  ls
+  379  cat ../mysql-wordpress-persistent-volume/gce-volumes.yaml
+  380  vi nfs-server-gce-pv.yaml
+  381  vi nfs-busybox-rc.yaml
+  382  vi nfs-pv.yaml
+  383  vi nfs-pvc.yaml
+  384  vi nfs-server-rc.yaml
+  385  > nfs-server-rc.yaml
+  386  vi nfs-server-rc.yaml
+  387  vi nfs-server-service.yaml
+  388  vi fs-web-rc.yaml
+  389  vi nfs-web-service.yaml
+  390  kubectl create -f nfs-server-gce-pv.yaml
+  391  cat nfs-server-gce-pv.yaml
+  392  cat nfs-server-rc.yaml
+  393  kubectl create -f nfs-server-rc.yaml
+  394  kubectl get ec
+  395  kubectl get rc
+  396  kubectl create -f nfs-server-service.yaml
+  397  cat nfs-server-service.yaml
+  398  kubectl describe services nfs-server
+  399  kubectl get rc
+  400  kubectl get pods
+  401  kubectl describe pod nfs-server-6bfs9
+  402  kubectl get pods
+  403  kubectl get pv
+  404  kubectl delete pv local-pv-1
+  405  ls
+  406  kubectl get deployments
+  407  kubectl delete deployments helloworld-deployment wordpress wordpress-mysql
+  408  ls
+  409  kubectl get pods
+  410  kubectl delete pod redis-django
+  411  kubectl get pods
+  412  kubectl get pvc
+  413  kubectl delete pvc mysql-pv-claim wp-pv-claim
+  414  kubectl delete pv
+  415  kubectl get pv
+  416  kubectl delete local-pv-2 wordpress-pv-1 wordpress-pv-2
+  417  ls
+  418  kubectl get pv
+  419  kubectl delete local-pv-2
+  420  kubectl get pv
+  421  kubectl delete pv local-pv-2 wordpress-pv-1 wordpress-pv-2
+  422  kubectl get pv
+  423  kubectl delete pv wordpress-pv-2
+  424  kubectl get pv
+  425  kubectl get pvc
+  426  kubectl delete pvc nfs-pv-provisioning-demo
+  427  kubectl get pvc
+  428  kubectl get pv nfs-pv-provisioning-demo
+  429  kubectl get pvc
+  430  kubectl delete pvc nfs-pv-provisioning-demo
+  431  kubectl get pvc
+  432  kubectl get rc
+  433  kubectl delete rc nfs-server
+  434  kubectl get pvc
+  435  kubectl get pv
+  436  ls
+  437  kubectl create -f nfs-server-gce-pv.yaml
+  438  kubectl get pvc
+  439  kubectl create -f nfs-server-rc.yaml
+  440  kubectl get pvc
+  441  cat nfs-server-rc.yaml
+  442  kubectl get pods
+  443  kubectl describe pods nfs-server-p8797
+  444  kubectl get pvc
+  445  kubectl get pv
+  446  vi nfs-server-gce-pv.yaml
+  447  ls
+  448  cat nfs-pv.yaml
+  449  history
+  450  history | grep create
+  451  kubectl create -f  nfs-server-rc.yaml
+  452  kubectl create -f  nfs-server-service.yaml
+  453  kubectl get service
+  454  vi nfs-pv.yaml
+  455  kubectl create -f  nfs-pv.yaml
+  456  vi nfs-pv.yaml
+  457  kubectl create -f  nfs-pv.yaml --validate=false
+  458  vi nfs-pv.yaml
+  459  kubectl describe services nfs-server
+  460  ls
+  461  cd ..
+  462  ls
+  463  mysql-wordpress-persistent-volume/
+  464  ls
+  465  cd ../
+  466  ls
+  467  cd -
+  468  cd
+  469  ls
+  470  cat mysql-wordpress-persistent-volume/gce-volumes.yaml
+  471  cat mysql-wordpress-persistent-volume/mysql-deployment.yaml
+  472  cat mysql-wordpress-persistent-volume/gce-volumes.yaml
+  473  sl
+  474  ls
+  475  cd nfs-volumes/
+  476  ls
+  477  kubectl create -f  nfs-pv.yaml
+  478  vi nfs-pv.yaml
+  479  kubectl create -f  nfs-pv.yaml
+  480  kubectl create -f  nfs-pvc.yaml
+  481  ls
+  482  ls -ltr
+  483  kubectl get pods
+  484  kubectl get pods nfs-server-p8797
+  485  kubectl describe  pods nfs-server-p8797
+  486  kubectl create -f nfs-busybox-rc.yaml
+  487  kubectl get pods nfs-server-p8797
+  488  kubectl get pv
+  489  kubectl get pvc
+  490  kubectl get pod -l name=nfs-busybox
+  491  kubectl descibe pods nfs-busybox-67457
+  492  kubectl describe pods nfs-busybox-67457
+  493  kubectl get service
+  494  kubectl get delete service helloworld-service podhelloworld wordpress wordpress-mysql
+  495  kubectl delete service helloworld-service podhelloworld wordpress wordpress-mysql
+  496  kubectl get service
+  497  kubectl get pods
+  498  ls
+  499  cat nfs-server-rc.yaml
+  500  ls
+  501  vi nfs-pv.yaml
+  502  kubectl create -f nfs-pv.yaml
+  503  kubectl get pv
+  504  kubectl get pvc
+  505  kubectl delete pvc nfs-pv-provisioning-demo
+  506  kubectl get pvc
+  507  kubectl get pods
+  508  kubectl create -f nfs-pv.yaml
+  509  cat nfs-server-gce-pv.yaml
+  510  cat nfs-server-rc.yam
+  511  cat nfs-server-rc.yaml
+  512  cd
+  513  apt install nfs-kernel-server
+  514  ls
+  515  cd nfs-volumes/
+  516  ls
+  517  cat nfs-pv
+  518  cat nfs-pv.yaml
+  519  ls
+  520  cd
+  521  mkdir /exports
+  522  vi /etc/exports
+  523  service nfs-server restart
+  524  ip addr
+  525  cat /etc/exports
+  526  exportfs
+  527  exportfs -a
+  528  vi  /etc/exports
+  529  exportfs -a
+  530  kubectl get pods
+  531  kubectl get service
+  532  kubectl delete service nfs-server
+  533  kubectl get rc
+  534  kubectl delete rc  nfs-server
+  535  kubectl delete rc  nfs-server nfs-busybox
+  536  kubectl delete rc  nfs-busybox
+  537  kubectl get rc
+  538  kubectl get deployments
+  539  kubectl get pods
+  540  kubectl get pvc
+  541  kubectl delete pvc nfs
+  542  kubectl get pvc
+  543  kubectl get pv
+  544  kubectl delete pv nfs
+  545  ls
+  546  exportfs
+  547  ls
+  548  cd nfs-volumes/
+  549  ls
+  550  cat nfs-pv.yaml
+  551  ls
+  552  cd ..
+  553  ls
+  554  cp -rf nfs-volumes nfs-volumes_1
+  555  cd nfs-volumes_1/
+  556  ls
+  557  vi nfs-pv.yaml
+  558  exportfs
+  559  ls
+  560  cd /exports
+  561  ls
+  562  cd ..ls
+  563  cd ..
+  564  ls
+  565  chown nobody:nogroup /exports
+  566  systemctl restart nfs-kernel-server
+  567  mount -t nfs master:/exports /mnt
+  568  cd /mnt/
+  569  ls
+  570  echo "Test-1"
+  571  echo "Test-1" > Test-1
+  572  cd /exports/
+  573  ls
+  574  cd
+  575  mount
+  576  ufw allow from 172.31.0.0/24 to any port nfs
+  577  ls
+  578  cd nfs-volumes_1/
+  579  ls
+  580  vi nfs-pv.yaml
+  581  kubectl create -f nfs-pv.yaml
+  582  kubectl get pv
+  583  ls -ltr
+  584  vi nfs-pvc.yaml
+  585  kubectl create -f nfs-pvc.yaml
+  586  kubectl get pvc
+  587  ls
+  588  cat nfs-busybox-rc.yaml
+  589  kubectl create -f nfs-busybox-rc.yaml
+  590  kubectl get pods
+  591  ls
+  592  cd /exports/
+  593  ls
+  594  cat index.html
+  595  history
+  596  history | grep -i apt
+  597  cd
+  598  cat /etc/exports
+  599  ls
+  600  kubectl get pods
+  601  kubectl get pods -o wide
+  602  history
+  603  ls
+  604  cd /home/
+  605  ls
+  606  cd
+  607  ls
+  608  cd kubernetes-project/
+  609  ls
+  610  mkdir nfs-persistent-volume
+  611  cd nfs-persistent-volume/
+  612  ls
+  613  cp -rf /root/nfs-volumes_1/nfs-pv.yaml  .
+  614  cp -rf /root/nfs-volumes_1/nfs-pvc.yaml
+  615  cp -rf /root/nfs-volumes_1/nfs-pvc.yaml .
+  616  ls
+  617  cp -rf /root/nfs-volumes_1/nfs-busybox-rc.yaml .
+  618  ls
+  619  cd
+  620  ls
+  621  cd nfs-volumes_1/
+  622  ls
+  623  cat fs-web-rc.yaml
+  624  kubectl create -f fs-web-rc.yaml
+  625  kubectl get pvs
+  626  kubectl get pvc
+  627  kubectl get pv
+  628  kubectl get pods
+  629  ls
+  630  kubectl create -f nfs-web-service.yaml
+  631  kubectl get service
+  632  curl 10.111.238.241
+  633  cat /exports/index.html
+  634  curl 10.111.238.241
+  635  ip addr
+  636  kubectl get service
+  637  ls
+  638  cp -rf fs-web-rc.yaml  /root/kubernetes-project/nfs-persistent-volume/
+  639  cp -rf nfs-web-service.yaml  /root/kubernetes-project/nfs-persistent-volume/
+  640  cd
+  641  kubectl get pods
+  642  cat /exports/
+  643  cd /exports/
+  644  ls
+  645  history
+  646  cd
+  647  s
+  648  ls
+  649  cd kubernetes-project/
+  650  cd nfs-persistent-volume/
+  651  ls
+  652  ls -ltr
+  653  cd
+  654  kubectl get deployment
+  655  kubectl get rc
+  656  kubectl delete rc nfs-busybox nfs-web
+  657  kubectl get service
+  658  kubectl delete service nfs-web
+  659  kubectl get pods
+  660  kubectl get pvc
+  661  kubectl delete pvc nfs
+  662  kubectl delete pv
+  663  kubectl get pv
+  664  kubectl delete pv nfs
+  665  kubectl get pv
+  666  exit
+  667  vi /etc/hosts
+  668  ls
+  669  cat kubernetes-project/
+  670  cd kubernetes-project/setup/
+  671  ls
+  672  cat install-kubernetes.sh
+  673  cd
+  674  vi .bashrc
+  675  source .bashrc
+  676  kubectl get nodes
+  677  kubectl get nodes -o logs
+  678  kubectl get nodes -o wide
+  679  kubectl describe node node01
+  680  kubectl describe node node02
+  681  ls
+  682  kubectl get nodes
+  683  kubectl describe node node02
+  684  kubectl get nodes
+  685  ls
+  686  cd kubernetes-project/
+  687  git status
+  688  git add .
+  689  git status
+  690  git commit -m "Nfs Volume"
+  691  git push
+  692  kubectl get nodes
+  693  ls
+  694  cd kubernetes-project/
+  695  ls
+  696  git push
+  697  ls
+  698  cd ..
+  699  ls
+  700  git fetch
+  701  git status
+  702  cd kubernetes-project/
+  703  git fetch
+  704  ls
+  705  git status
+  706  git pull
+  707  git push
+  708  exit
+  709  rm -rf kubernetes-project/
+  710  git clone https://github.com/amitvashist7/kubernetes-project.git
+  711  cd kubernetes-project/
+  712  ls
+  713  cd metrics-server/
+  714  kubectl get node s
+  715  kubectl get nodes
+  716  kubectl create -f .
+  717  kubectl top
+  718  kubectl top node
+  719  kubectl get pods --all-namespace
+  720  kubectl get pods --all-namespaces
+  721  kubectl top node
+  722  kubectl top pod
+  723  kubectl get pods
+  724  cd ../ingress/
+  725  ls
+  726  kubectl create -f ingress.yml
+  727  kubectl create -f nginx-ingress-controller.yml
+  728  kubectl create -f echoservice.yml
+  729  kubectl create -f helloworld-*
+  730  kubectl create -f helloworld-v1.yml
+  731  kubectl create -f helloworld-v2
+  732  kubectl create -f helloworld-v2.yml
+  733  kubectl get pods
+  734  kubectl top
+  735  kubectl top nodes
+  736  kubectl top pod
+  737  cd ../autoscaling/
+  738  ls
+  739  cat hpa-example.yml
+  740  vi  hpa-example.yml
+  741  cd ..
+  742  kubectl create -f autoscaling/hpa-example.yml
+  743  kubectl get hpa
+  744  kubectl get pods
+  745  kubectl get hpa
+  746  kubectl get pods
+  747  kubectl get hpa
+  748  kubectl get all
+  749  kubectl get hpa
+  750  ls
+  751  cd resourcequotas/
+  752  cd ..
+  753  ls
+  754  cat resourcequotas/resourcequota.yml
+  755  kubectl get namespaces
+  756  kubectl create -f resourcequotas/resourcequota.yml
+  757  kubectl get namespaces
+  758  kubectl get rs --namespace=myspace
+  759  kubectl get rs
+  760  kubectl get rs --namespace=myspace
+  761  cat resourcequotas/helloworld-with-quotas.yml
+  762  cat resourcequotas/resourcequota.yml
+  763  cat resourcequotas/helloworld-with-quotas.yml
+  764  kubectl create -f resourcequotas/helloworld-with-quotas.yml
+  765  kubectl get  pods  --namespace=myspace
+  766  kubectl get  rs --namespace=myspace
+  767  kubectl describe rs helloworld-deployment-b67868994 --namespace=myspace
+  768  kubectl get quota --namespace=myspace
+  769  cat resourcequotas/defaults.yml
+  770  kubectl create -f resourcequotas/defaults.yml
+  771  kubectl get limits  --namespace=myspace
+  772  kubectl describe limits  limits --namespace=myspace
+  773  kubectl get quota --namespace=myspace
+  774  kubectl describe quota compute-quota --namespace=myspace
+  775  kubectl create -f resourcequotas/helloworld-no-quotas.yml
+  776  cat resourcequotas/defaults.yml
+  777  kubectl create -f resourcequotas/helloworld-no-quotas.yml
+  778  cat resourcequotas/helloworld-no-quotas.yml
+  779  kubectl get deployment -n myspace
+  780  kubectl delete deployment helloworld-deployment -n myspace
+  781* kubectl create -f resourcequotas/helloworld-no-quotas.l
+  782  kubectl get deployment -n myspace
+  783  kubectl describe deployment helloworld-deployment -n myspace
+  784  kubectl get pods  --namespace=myspace
+  785  cd /etc/kubernetes/pki/
+  786  ls
+  787  cd
+  788  ls
+  789  mkdir user
+  790  cd user/
+  791  ls
+  792  openssl genrsa -out amit.pem 2048
+  793  ls
+  794  openssl req -new -key amit.pem -out amit-csr.pem -subj "/CN=amit/O=training/"
+  795  ls
+  796  openssl x509 -req -in amit-csr.pem -CA /etc/kubernetes/pki/ca.crt -CAkey /etc/kubernetes/pki/ca.key -CAcreateserial -out amit.crt -days 10000
+  797  ls
+  798  cat amit.pem
+  799  cat amit.crt
+  800  # kubectl config view
+  801  cd
+  802  # kubectl config view
+  803  kubectl config view
+  804  kubectl config set-credentials amit --client-certificate=/root/user/amit.crt --client-key=/root/user/amit.pem
+  805  kubectl config set-context amit --cluster=kubernetes --user=amit
+  806  kubectl config get-contexts
+  807  kubectl get pods
+  808  kubectl config use-context amit
+  809  kubectl get pods
+  810  kubectl config get-contexts
+  811  kubectl config use-context kubernetes-admin@kubernetes
+  812  cd kubernetes-project/users/
+  813  ls
+  814  cat admin-user.yaml
+  815  kubectl create -f kubernetes-project/users/admin-user.yaml
+  816  kubectl create -f admin-user.yaml
+  817  kubectl config get-contexts
+  818  kubectl config use-contexts amit
+  819  kubectl config use-context amit
+  820  kubectl config get-contexts
+  821  kubectl get pods
+  822  ls
+  823  cat README.md
+  824  kubectl config get-contexts
+  825  kubectl config use-contexts kubernetes-admin@kubernetes
+  826  kubectl config use-context kubernetes-admin@kubernetes
+  827  kubectl config get-contexts
+  828  kubectl delete -f admin-user.yaml
+  829  ls
+  830  cat user.yaml
+  831  vi user.yaml
+  832  ls
+  833  kubectl create -f user.yaml
+  834  kubectl config use-context amit
+  835  kubectl get pods
+  836  kubectl get nodes
+  837  ls
+  838  cd ..
+  839  ls
+  840  cd configmap/
+  841  ls
+  842  cat reverseproxy.conf
+  843  kubectl create configmap nginx-config --from-file=reverseproxy.conf
+  844  kubectl config get-contexts
+  845  kubectl config use-context kubernetes-admin@kubernetes
+  846  kubectl create configmap nginx-config --from-file=reverseproxy.conf
+  847  kubectl get configmap
+  848  kubectl describe configmap nginx-config
+  849  kubectl get configmap nginx-config -o yaml
+  850  cat nginx.yml
+  851  cat nginx-service.yml
+  852  kubectl create -f nginx.yml
+  853  kubectl create -f nginx-service.yml
+  854  kubectl get pods
+  855  kubectl describe pod helloworld-nginx
+  856  kubectl get pods
+  857  kubectl get service
+  858  curl 10.103.132.92
+  859  kubectl get pods
+  860  kubectl exec -i -t helloworld-nginx -c nginx -- bash
+  861  kubectl get configmap
+  862  kubectl edit configmap  nginx-config
+  863  kubectl get pods
+  864  kubectl exec -i -t helloworld-nginx -c nginx -- bash
+  865  kubectl get pods
+  866  kubectl describe pod helloworld-nginx
+  867  kubectl get configmap
+  868  kubectl describe configmap nginx-config
+  869  kubectl edit configmap nginx-config
+  870  kubectl exec -i -t helloworld-nginx -c nginx -- bash
+  871  history
