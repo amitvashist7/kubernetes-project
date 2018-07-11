@@ -1,0 +1,19 @@
+Replication Controller:
+=======================>
+   92  cat kubernetes-project/replication-controller/helloworld-repl-controller.yml
+   93  kubectl create -f kubernetes-project/replication-controller/helloworld-repl-controller.yml
+   94  kubectl get replicationcontroller
+   95  kubectl get rc
+   96  kubectl get pods
+   97  kubectl get pods -o wide
+   98  curl 192.168.1.8
+   99  curl 192.168.2.10
+  100  kubectl get rc
+  101  kubectl edit rc helloworld-controller
+  102  kubectl get rc
+  103  kubectl get pods -o wide
+  104  kubectl scale rc/helloworld-controller --replicas=3
+  105  kubectl get pods -o wide
+  106  kubectl scale rc/helloworld-controller --replicas=10
+  107  kubectl get pods -o wide
+  108  history

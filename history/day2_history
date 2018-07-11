@@ -1,0 +1,155 @@
+Docker History 
+==============>
+
+
+
+root@docker-host:~# history
+    1  exit
+    2  cat /etc/*-release
+    3  apt-get update -y
+    4  apt-get install -y docker-ce
+    5  apt-get install -y docker.io
+    6  systemctl status docker
+    7  docker version
+    8  docker --help
+    9  docker images
+   10  docker run ubuntu echo "Hello World of Docker"
+   11  docker images
+   12  docker ps
+   13  docker ps -a
+   14  docker run ubuntu echo "Hello CTS"
+   15  docker images
+   16  docker ps
+   17  docker ps -a
+   18  docker images
+   19*
+   20  docker images
+   21  systemctl status docker
+   22  docker login
+   23  docker images
+   24  docker ps
+   25  docker ps -a
+   26  docker run busybox echo "Hello BusyBox"
+   27  docker images
+   28  ls
+   29  docker ps -a
+   30  docker --help
+   31  docker ps -a
+   32  docker run -it ubuntu
+   33  docker pull centos
+   34  docker images
+   35*
+   36  docker run -it ubuntu
+   37  docker run -it centos
+   38  docker run -itd centos
+   39  docker run -it centos
+   40  docker attach 4f1ca8fcfc8b
+   41  history
+   42  docker images
+   43  docker push amitvashist7/apache-ex5
+   44  docker images
+   45  docker run -d  amitvashist7/apache-ex5
+   46  docker ps
+   47  curl localhost
+   48  docker inspect 28b42c7e713f
+   49  curl 172.17.0.3
+   50  ip addr
+   51  docker run -d  amitvashist7/apache-ex5 -p 8080:80
+   52  docker ps
+   53  docker run -d  amitvashist7/apache-ex5 -p 80:8080
+   54  docker ps
+   55  docker run -d  amitvashist7/apache-ex5 -P 80:8080
+   56  docker ps
+   57  docker run -d -p 80:8080 amitvashist7/apache-ex5
+   58  docker ps
+   59  curl localhost
+   60  curl localhost:8080
+   61  docker kill 10b134f5858c
+   62  docker run -d -p 8080:80 amitvashist7/apache-ex5
+   63  docker ps
+   64  curl localhost:8080
+   65  ip addr
+   66  curl localhost:8080
+   67  curl 172.31.0.150:8080
+   68  history
+   69  docker images
+   70  docker run -d -p 8081:80 amitvashist7/apache-ex6
+   71  docker ps
+   72  curl localhost:8080
+ 
+
+Docker Image
+============
+
+root@docker-host:~/my-image# history
+    1  exit
+    2  docker ps
+    3  docker ps -a
+    4  docker ps
+    5  uname -a
+    6  docker ps
+    7  docker ps -a
+    8  docker ps
+    9  docker ps -q
+   10  docker ps -ql
+   11  docker ps -a
+   12  docker ps -aq
+   13  docker kill 247d9a755f60
+   14* docker kill 301b97ad2e3
+   15  docker ps
+   16  docker ps -aq
+   17  docker ps -a
+   18  docker ps
+   19  docker ps -a
+   20  docker ps -aq
+   21  docker ps -aq | wc -l
+   22  docker ps -aq
+   23  docker rm $(docker ps -aq)
+   24  docker ps -aq
+   25  docker images
+   26  docker rmi busybox
+   27  docker images
+   28  ip addr
+   29  ls
+   30  docker ps
+   31  docker run -itd centos
+   32  docker ps
+   33  docker inspect 17877eba01ad
+   34  ks
+   35  mkdir  my-image
+   36  ls
+   37  cd my-image/
+   38  ls
+   39  vim apache-ex5
+   40  echo "Welcome to Docker Presentaion" > index.html
+   41  ls
+   42  docker build -t amitvashist7/apache-ex5 -f apache-ex5 .
+   43  cat apache-ex5
+   44  docker image
+   45  docker images
+   46  ls
+   47  vi apache-ex5
+   48  echo "Docker Test - 2" > index.html
+   49  history 
+   
+   
+   73  curl localhost:8081
+   
+ DockerFile
+============>
+
+root@docker-host:~# cat my-image/apache-ex5
+# Docker Demo Container Image.
+FROM amitvashist7/apache-ex5:latest
+MAINTAINER Amit Vashist <amitvashist7@gmail.com>
+
+VOLUME [ "/var/www/html" ]
+WORKDIR /var/www/html
+ADD index.html /var/www/html/index.html
+ENTRYPOINT [ "/usr/sbin/apache2ctl" ]
+CMD ["-D","FOREGROUND"  ]
+EXPOSE 80
+root@docker-host:~#
+
+
+github + amitvashist7 + myapache 
