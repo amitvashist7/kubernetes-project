@@ -1,0 +1,20 @@
+  340  cat nginx.yml
+  341  ls
+  342  kubectl create configmap nginx-config  --from-file=reverseproxy.conf
+  343  kubectl get configmap
+  344  kubectl describe  configmap nginx-config
+  345  kubectl get  configmap nginx-config -o yaml
+  346  kubectl create -f  nginx.yml
+  347  kubectl create -f  nginx-service.yml
+  348  kubectl get pods
+  349  kubectl describe pod helloworld-nginx
+  350  ls
+  351  kubectl get service
+  352  curl 10.104.137.184
+  353  kubectl get pods
+  354  kubectl exec helloworld-nginx -i -t -- /bin/bash
+  355  kubectl exec helloworld-nginx -i -t -c nginx -- /bin/bash
+  356  cd
+
+
+root@kube-master:~# kubectl edit configmap nginx-config
