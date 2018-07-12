@@ -1,0 +1,27 @@
+ 151  kubectl get nodes
+  152  kubectl get nodes --show-labels
+  153  cat kubernetes-project/deployment/helloworld-nodeselector.yml
+  154  kubectl create -f kubernetes-project/deployment/helloworld-nodeselector.yml
+  155  kubectl get deployment
+  156  kubectl get rs
+  157  kubectl get pods
+  158  kubectl describe pods helloworld-deployment-598b4cf865-2krmt
+  159  kubectl get pods
+  160  cat kubernetes-project/deployment/helloworld-nodeselector.yml
+  161  kubectl label nodes worker01 hardware=physical
+  162  kubectl get nodes --show-labels
+  163  kubectl get pods
+  164  kubectl get pods -o wide
+  165  kubectl label nodes worker01 env=prod
+  166* kubectl label nodes worker0
+  167  kubectl label nodes worker02 hardware=virtual
+  168  ls
+  169  vin kubernetes-project/deployment/helloworld-nodeselector.yml
+  170  vim kubernetes-project/deployment/helloworld-nodeselector.yml
+  171  kubectl create -f kubernetes-project/deployment/helloworld-nodeselector.yml
+  172  kubectl get pods
+  173  kubectl get nodes --show-labels
+  174  kubectl get deployment
+  175  kubectl get deployment helloworld-deployment-2
+  176  kubectl edit deployment helloworld-deployment-2
+  177  kubectl get pods

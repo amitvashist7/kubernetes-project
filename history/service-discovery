@@ -1,0 +1,46 @@
+ 266  ls
+  267  cat kubernetes-project/service-discovery/secrets.yml
+  268  cat kubernetes-project/service-discovery/database.yml
+  269  cat kubernetes-project/service-discovery/database-service.yml
+  270  cat kubernetes-project/service-discovery/helloworld-db.yml
+  271* cat kubernetes-project/service-discovery/database-service
+  272  cat kubernetes-project/service-discovery/helloworld-db-service.yml
+  273  kubectl create -f kubernetes-project/service-discovery/secrets.yml
+  274  kubectl get secret
+  275  kubectl create -f kubernetes-project/service-discovery/database.yml
+  276  kubectl get pods
+  277  kubectl get pods -o wide
+  278  kubectl describe pods database
+  279  kubectl get pods
+  280  kubectl describe pods database
+  281  kubectl get pods
+  282  l
+  283  kubectl get service
+  284  kubectl create -f kubernetes-project/service-discovery/database-service.yml
+  285  kubectl get svc
+  286  telnet 10.103.212.56 3306
+  287  kubectl get pods -o wide
+  288  telnet worker01 30221
+  289  kubectl create -f kubernetes-project/service-discovery/helloworld-db.yml
+  290  kubectl get deployment
+  291  kubectl get pods
+  292  kubectl describe pod helloworld-deployment-697d85997c-2td5r
+  293  kubectl get pods
+  294  kubectl describe pod helloworld-deployment-697d85997c-2td5r
+  295  kubectl get pods
+  296  kubectl create -f kubernetes-project/service-discovery/helloworld-db-service.yml
+  297  kubectl get pods
+  298  kubectl get service
+  299  kubectl get pods -o wide
+  300  kubectl get service
+  301  curl 10.100.122.67:3000
+  302  kubectl get pods -o wide
+  303  cat kubernetes-project/service-discovery/database-service.yml
+  304  kubectl get pods -o wide
+  305  kubectl get service
+  306  nslookup database-service
+  307  kubectl run -i -t busybox --image=busybox --restart=Never -- sh
+  308  kubectl get pods
+  309  kubectl exec database -i -r -- mysql -u root -p
+  310  kubectl exec database -i -t -- mysql -u root -p
+  311  kubectl get pods
