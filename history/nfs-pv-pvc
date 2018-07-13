@@ -1,0 +1,56 @@
+ 26  cd kubernetes-project/nfs-persistent-volume/
+   27  ls
+   28  ls -ltr
+   29  cat nfs-pv.yaml
+   30  hostname
+   31  vi  nfs-pv.yaml
+   32  cat nfs-pv.yaml
+   33  kubectl get pv
+   34  kubectl create -f nfs-pv.yaml
+   35  kubectl get pv
+   36  cat nfs-pvc.yaml
+   37  kubectl get pvc
+   38  kubectl create -f nfs-pvc.yaml
+   39  kubectl get pvc
+   40  kubectl get pv
+   41  ls
+   42  cat nfs-busybox-rc.yaml
+   43  kubectl create -f nfs-busybox-rc.yaml
+   44  kubectl get pods
+   45  kubectl describe pods nfs-busybox-xhdh4
+   46  ls
+   47  tail -f  /exports/index.html
+   48  ls
+   49*
+   50  tail -f  /exports/index.html
+   51  kubectl delete pod nfs-busybox-6dbcj
+   52  kubectl get pods
+   53  tail -f  /exports/index.html
+   54  ls
+   55  cat fs-web-rc.yaml
+   56  kubectl create -f fs-web-rc.yaml
+   57  kubectl get pods
+   58  kubectl create -f nfs-web-service.yaml
+   59  kubectl get pods
+   60  ls
+   61  kubectl get pods
+   62  kubectl get service
+   63  curl 10.96.210.175
+   64  kubectl get service
+   65  curl 10.96.210.175
+   66  kubectl get pods -o wide
+   67  kubectl get rc
+   68  kubectl delete nfs-busybox
+   69  kubectl delete rc nfs-busybox
+   70  kubectl get pods -o wide
+   71  curl 10.96.210.175
+   72  ls
+   73  cd
+   74  ls
+   75  cat /exports/
+   76  ls
+   77  cd /exports/
+   78  ls
+   79  cat index.html
+   80  echo "Hello World" > index.html
+   81  curl 10.96.210.175
