@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: DaemonSet
+metadata:
+ name: helloworld-deamonset
+ labels:
+  app: helloworld-ds
+spec:
+  template:
+   metadata:
+   labels:
+    name: helloworld-ds
+  spec:
+   containers:
+   - name: k8s-demo
+     image: amitvashist7/k8s-tiny-web
+     ports:
+     - name: node-port
+       containerPort: 80

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: helloworld-statefull
+  labels:
+    app: helloworld-statefull
+spec:
+  serviceName: helloworld-statefull
+  replicas: 3
+  selector:
+    matchLabels:
+      app: helloworld-statefull
+  template:
+    metadata:
+      labels:
+        app: helloworld-statefull
+    spec:
+      containers:
+      - name: k8s-demo
+        image: amitvashist7/k8s-tiny-web
+        ports:
+        - name: node-port
+          containerPort: 80
