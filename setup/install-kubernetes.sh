@@ -21,10 +21,10 @@ cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
 deb http://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 apt-get update
-apt-get install -y kubelet kubeadm kubectl
+apt-get install -y kubelet=1.10.4-00 kubeadm=1.10.4-00 kubectl=1.10.4-00
 
 echo "deploying kubernetes (with calico)..."
-kubeadm init --pod-network-cidr=192.168.0.0/16 --apiserver-advertise-address="172.31.0.10" 
+kubeadm init --pod-network-cidr=192.168.0.0/16 --apiserver-advertise-address="172.31.0.100" 
 export KUBECONFIG=/etc/kubernetes/admin.conf
 
 # DigitalOcean without firewall (IP-in-IP allowed) - or any other cloud / on-prem that supports IP-in-IP traffic
