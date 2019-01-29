@@ -1,0 +1,21 @@
+apiVersion: kubeadm.k8s.io/v1alpha1
+kind: MasterConfiguration
+nodeName: "<node hostname>"
+etcd:
+  endpoints:
+  - "http://<master1 IP>:2379"
+  - "http://<master2 IP>:2379"
+  - "http://<master3 IP>:2379"
+apiServerExtraArgs:
+  apiserver-count: "3"
+networking:
+  podSubnet: "10.244.0.0/16"
+apiServerCertSANs:
+- "<master1 hostname>"
+- "<master2 hostname>"
+- "<master3 hostname>"
+- "<master1 IP>"
+- "<master2 IP>"
+- "<master3 IP>"
+- "<virtual IP>"
+- "127.0.0.1"

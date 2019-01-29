@@ -1,0 +1,38 @@
+
+
+Keepalived takes a virtual IP as an argument and ties it up to one of the master nodes. Upon master node's failure, it migrates the virtual IP to a backup node making it the master. 
+Therefore, any node failures are opaque to the user from an accessiblity standpoint.
+
+To build docker image:
+
+$ docker build -t user/keepalived .
+
+To run keepalived (should be run on all masters):
+
+docker run --name keepalived --restart always -d -e KEEPALIVED_PRIORITY=$priority -e KEEPALIVED_VIRTUAL_IP=$VIP -e KEEPALIVED_PASSWORD=$password -e KEEPALIVED_STATE=$node-state \
+    -e KEEPALIVED_INTERFACE=$nw-interface --net=host --privileged=true user/keepalived
+
+NOTE:
+1. KEEPALIVED_STATE takes in two values MASTER or BACKUP. If there are more than one nodes in the cluster, one of the node will be MASTER and the rest will be BACKUP.
+2. KEEPALIVED_PRIORITY on the MASTER should be greater than the KEEPALIVED_PRIORITY on BACKUP. Example: 101 on MASTER and 100 on BACKUP
+
+
+Example:
+
+If there are three master's:
+
+master1:
+
+docker run --name keepalived --restart always -d -e KEEPALIVED_PRIORITY='101' -e KEEPALIVED_VIRTUAL_IP='xxx.xxx.xxx.xxx' -e KEEPALIVED_PASSWORD='pass' -e KEEPALIVED_STATE='MASTER' \
+-e KEEPALIVED_INTERFACE='ens160' --net=host --privileged=true karthik/keepalived
+
+master2: 
+
+docker run --name keepalived --restart always -d -e KEEPALIVED_PRIORITY='100' -e KEEPALIVED_VIRTUAL_IP='xxx.xxx.xxx.xxx' -e KEEPALIVED_PASSWORD='pass' -e KEEPALIVED_STATE='BACKUP' \
+-e KEEPALIVED_INTERFACE='ens160' --net=host --privileged=true karthik/keepalived
+
+
+master3:
+
+docker run --name keepalived --restart always -d -e KEEPALIVED_PRIORITY='100' -e KEEPALIVED_VIRTUAL_IP='xxx.xxx.xxx.xxx' -e KEEPALIVED_PASSWORD='pass' -e KEEPALIVED_STATE='BACKUP' \
+-e KEEPALIVED_INTERFACE='ens160' --net=host --privileged=true karthik/keepalived

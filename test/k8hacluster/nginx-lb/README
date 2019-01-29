@@ -1,0 +1,29 @@
+
+Setup:
+======
+
+1. Edit file nginx-lb.conf with the IP addresses of all the master's in the cluster.
+2. Start the lb with: 
+	$ docker-compose -f docker-compose.yaml up -d
+3. Stop the lb with:
+	$ docker-compose stop
+4. Once installed, edit the kube proxy config on every master:
+
+	$ kubectl edit configmap kube-proxy -n kube-system
+		look for "server:" and replace the address in it with the virual ip as follows:  "server: https://<virtual ip>:16443"
+5. Restart all the kube-proxy's (deleting exiting ones will restart it):
+	$ kubectl get pods --all-namespaces -o wide | grep proxy    // List all proxy's running
+	$ kubectl delete pod --namespace=kube-system kube-proxy-wqm2h // Command to use to delete proxy
+
+6. To make sure the kube proxy has come up right, check the proxy logs:
+	$ kubectl logs --namespace=kube-system kube-proxy-w2sn2 | less
+
+Troubleshooting:
+================
+
+To cleanup nginx lb:
+Go to the directory where the compose file is and issue:
+ 1. docker-compose ps // to view the status of the lb
+ 2. docker-compose stop // to stop the stack
+ 3. docker-compose -f docker-compose.yaml rm -f //Remove/delete the stack
+
