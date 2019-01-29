@@ -1,9 +1,9 @@
 ETCD_VERSION=3.2
 TOKEN=my-etcd-token
 CLUSTER_STATE=new
-NAME_1=etcd-node-1
-NAME_2=etcd-node-2
-NAME_3=etcd-node-3
+NAME_1=k8s-master-a
+NAME_2=k8s-master-b
+NAME_3=k8s-master-c
 HOST_1=10.142.0.7
 HOST_2=10.142.0.8
 HOST_3=10.142.0.9
