@@ -4,9 +4,9 @@ CLUSTER_STATE=new
 NAME_1=k8s-master-a
 NAME_2=k8s-master-b
 NAME_3=k8s-master-c
-HOST_1=10.142.0.7
-HOST_2=10.142.0.8
-HOST_3=10.142.0.9
+HOST_1=10.142.0.10
+HOST_2=10.142.0.11
+HOST_3=10.142.0.12
 CLUSTER=${NAME_1}=http://${HOST_1}:2380,${NAME_2}=http://${HOST_2}:2380,${NAME_3}=http://${HOST_3}:2380
 DATA_DIR=/var/lib/etcd
 
