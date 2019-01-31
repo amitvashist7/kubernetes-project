@@ -3,9 +3,9 @@ kind: MasterConfiguration
 nodeName: "k8s-master-a"
 etcd:
   endpoints:
-  - "http://10.142.0.10:2379"
-  - "http://10.142.0.11:2379"
-  - "http://10.142.0.12:2379"
+  - "http://10.142.0.15:2379"
+  - "http://10.142.0.16:2379"
+  - "http://10.142.0.17:2379"
 apiServerExtraArgs:
   apiserver-count: "3"
 networking:
@@ -14,8 +14,10 @@ apiServerCertSANs:
 - "k8s-master-a"
 - "k8s-master-b"
 - "k8s-master-c"
-- "10.142.0.10"
-- "10.142.0.11"
-- "10.142.0.12"
-- "192.168.100.100"
+- "k8s-lb-node"
+- "10.142.0.15"
+- "10.142.0.16"
+- "10.142.0.17"
+- "10.142.0.18"
+- "10.142.0.100"
 - "127.0.0.1"
