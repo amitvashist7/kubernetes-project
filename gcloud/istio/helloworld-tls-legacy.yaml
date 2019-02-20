@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: hello
-        image: wardviaene/http-echo
+        image: amitvashist7/http-echo
         env:
         - name: TEXT
           value: "!!!"
@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
       - name: hello
-        image: wardviaene/http-echo
+        image: amitvashist7/http-echo
         env:
         - name: TEXT
           value: hello

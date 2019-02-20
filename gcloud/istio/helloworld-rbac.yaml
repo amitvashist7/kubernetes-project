@@ -97,7 +97,7 @@ spec:
       serviceAccountName: hello  # service account
       containers:
       - name: hello
-        image: wardviaene/http-echo
+        image: amitvashist7/http-echo
         env:
         - name: TEXT
           value: hello
@@ -136,7 +136,7 @@ spec:
       serviceAccountName: world  # service account
       containers:
       - name: world
-        image: wardviaene/http-echo
+        image: amitvashist7/http-echo
         env:
         - name: TEXT
           value: world
@@ -174,7 +174,7 @@ spec:
     spec:
       containers:
       - name: world-2
-        image: wardviaene/http-echo
+        image: amitvashist7/http-echo
         env:
         - name: TEXT
           value: "!!!" 

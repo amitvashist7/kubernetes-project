@@ -72,22 +72,22 @@ kubectl apply -f <(istioctl kube-inject -f samples/bookinfo/platform/kube/bookin
 ### Hello world app 
 ```
 export PATH="$PATH:~/istio-1.0.3/bin"
-wget https://raw.githubusercontent.com/wardviaene/kubernetes-course/master/istio/helloworld.yaml
+wget https://raw.githubusercontent.com/amitvashist7/kubernetes-course/master/istio/helloworld.yaml
 kubectl apply -f <(istioctl kube-inject -f helloworld.yaml)
-kubectl apply -f https://raw.githubusercontent.com/wardviaene/kubernetes-course/master/istio/helloworld-gw.yaml
+kubectl apply -f https://raw.githubusercontent.com/amitvashist7/kubernetes-course/master/istio/helloworld-gw.yaml
 ```
 
 ### Mutual TLS example
 Create pods, services, destinationrules, virtualservices
 ```
-wget https://raw.githubusercontent.com/wardviaene/kubernetes-course/master/istio/helloworld-tls.yaml
+wget https://raw.githubusercontent.com/amitvashist7/kubernetes-course/master/istio/helloworld-tls.yaml
 kubectl create -f <(istioctl kube-inject -f helloworld-tls.yaml)
-kubectl create -f https://raw.githubusercontent.com/wardviaene/kubernetes-course/master/istio/helloworld-legacy.yaml
+kubectl create -f https://raw.githubusercontent.com/amitvashist7/kubernetes-course/master/istio/helloworld-legacy.yaml
 ```
 
 ### End-user authentication
 ```
-wget https://raw.githubusercontent.com/wardviaene/kubernetes-course/master/istio/helloworld-jwt.yaml
+wget https://raw.githubusercontent.com/amitvashist7/kubernetes-course/master/istio/helloworld-jwt.yaml
 kubectl create -f <(istioctl kube-inject -f helloworld-jwt.yaml)
-kubectl create -f https://raw.githubusercontent.com/wardviaene/kubernetes-course/master/istio/helloworld-jwt-enable.yaml
+kubectl create -f https://raw.githubusercontent.com/amitvashist7/kubernetes-course/master/istio/helloworld-jwt-enable.yaml
 ```
