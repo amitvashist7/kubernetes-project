@@ -1,0 +1,4 @@
+*/provider.tf 
+*/*.terraform* 
+*/*.vagrant* 
+*/*.tfstate*
