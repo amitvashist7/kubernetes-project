@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: hello
-        image: amitvashist7/http-echo
+        image: wardviaene/http-echo
         env:
         - name: MY_POD_NAME
           valueFrom:
@@ -38,7 +38,7 @@ spec:
     spec:
       containers:
       - name: hello
-        image: amitvashist7/http-echo
+        image: wardviaene/http-echo
         env:
         - name: MY_POD_NAME
           valueFrom:
