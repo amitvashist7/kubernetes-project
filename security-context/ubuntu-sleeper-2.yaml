@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ubuntu-sleeper
+spec:
+  containers:
+  -  name: ubuntu-sleeper
+     image: ubuntu
+     command: ["sleep", "5000"]
+     securityContext:
+      capabilities:
+        add: ["SYS_TIME"]
